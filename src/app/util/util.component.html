@@ -1,0 +1,17 @@
+<app-ajvschema (err)="getError($event)" [data]="data"></app-ajvschema>
+
+<div>{{errmsg}}</div>
+
+<div [innerHTML]="omittedErrMsg"></div>
+
+
+<ace-editor  (tabSelected)="RetriveErrorMsg($event)" [appSchemadommarker]="shemaErrors" #aceEditor [(text)]="data_json"  (textChanged)="textChanged($event)" mode="json" style="height:400px;"></ace-editor>
+
+
+
+
+<div class="abc" errmsg="fewfwefwe">123</div>
+
+
+
+<app-comp [appDirec]="123" ></app-comp>

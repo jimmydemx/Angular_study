@@ -38,21 +38,10 @@ export class UtilComponent implements OnInit {
   ngOnInit(): void {
 
     this.data= {
-      Has_persistence:true,
-      variablesListName:123,
-      unique:123,
-      state:111,
-      afe:1,
-      fef:12321,
-      retePosition:[
-        "13123",
-        "dw",
-        123
-      ],
-      persistence:{
-        ffe:123
-      }
-
+      "animal":true,
+       "cat":null,
+       "dog":null,
+        "pig":null
     }
     this.data_json = JSON.stringify(this.data,null,2);
     console.log(this.data_json)
@@ -63,41 +52,41 @@ export class UtilComponent implements OnInit {
 
   ngAfterViewInit(){
 
-    var aceEditor =ace.edit(this.aceEditor.nativeElement);
-    aceEditor.on('focus',($event)=>{
+    // var aceEditor =ace.edit(this.aceEditor.nativeElement);
+    // aceEditor.on('focus',($event)=>{
 
 
-    var aceEditor =ace.edit(this.aceEditor.nativeElement);
+    // var aceEditor =ace.edit(this.aceEditor.nativeElement);
 
     
     // var selectionRange = aceEditor.getSelectionRange();
     // var endLine = selectionRange.end.row;
     // var startLine = selectionRange.start.row;
-     var row = (aceEditor.getSelection() as any).anchor.row;
-    var ele= aceEditor.renderer.getMouseEventTarget() 
-     var content = aceEditor.session.getLine(row); // content
+    //  var row = (aceEditor.getSelection() as any).anchor.row;
+    // var ele= aceEditor.renderer.getMouseEventTarget() 
+    //  var content = aceEditor.session.getLine(row); // content
 
      //content parse
 
-     var content_parse = content.replace(/\W*(\w*)\W*:.*/,"$1")
+    //  var content_parse = content.replace(/\W*(\w*)\W*:.*/,"$1")
 
    
       // get the current error Array
-      console.log('4141241',this.RetrivedErrorArray.find(item=>item.index==content_parse))
-      if(this.RetrivedErrorArray){
-        this.errmsg=this.RetrivedErrorArray.filter(item=>item.index==content_parse)?.map(item=>item.errormsg).join('\n') || ''
-      }
+      // console.log('4141241',this.RetrivedErrorArray.find(item=>item.index==content_parse))
+      // if(this.RetrivedErrorArray){
+      //   this.errmsg=this.RetrivedErrorArray.filter(item=>item.index==content_parse)?.map(item=>item.errormsg).join('\n') || ''
+      // }
       
 
 
     
   
-    console.log('content',content,row,ele,content_parse)
+    // console.log('content',content,row,ele,content_parse)
 
     // search DOM的
 
-      console.log("change",$event)
-    })
+      // console.log("change",$event)
+    // })
 
 
  

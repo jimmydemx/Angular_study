@@ -1,4 +1,4 @@
-<app-ajvschema (err)="getError($event)" [data]="data"></app-ajvschema>
+<!-- <app-ajvschema (err)="getError($event)" [data]="data"></app-ajvschema>
 
 <div>{{errmsg}}</div>
 
@@ -10,10 +10,10 @@
 
 
 
-<div class="abc" errmsg="fewfwefwe">123</div>
+<div class="abc" errmsg="fewfwefwe">123</div> -->
 
 
-
+<!-- directive and component hooks order -->
 <app-comp [appDirec]="123" ></app-comp>
 
 
@@ -21,11 +21,29 @@
 <custom-access-value-wrapper></custom-access-value-wrapper>
 
 
+
+<custom-value-access-wrapper></custom-value-access-wrapper>
+
+
 <!-- custom bridges -->
-<custom-access-value-wrapper>
+<!-- <custom-access-value-wrapper>
     <custom-bridge-a></custom-bridge-a>
 </custom-access-value-wrapper>
 
 <custom-access-value-wrapper>
     <custom-bridge-b></custom-bridge-b>
-</custom-access-value-wrapper>
+</custom-access-value-wrapper> -->
+
+
+
+<!-- multi provide -->
+<app-dependency-inject-wrapper></app-dependency-inject-wrapper>
+
+
+<!-- any tests -->
+<!-- <app-tests></app-tests> -->
+
+
+
+<!-- bootstrap -->
+<app-bootstrap></app-bootstrap>

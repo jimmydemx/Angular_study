@@ -1,4 +1,4 @@
-import { Component, ContentChildren, ElementRef, OnInit, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { APP_INITIALIZER, Component, ComponentRef, ContentChildren, ElementRef, OnInit, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { AceEditorComponent } from 'ng2-ace-editor';
 import { AjvschemaComponent } from './ajvschema/ajvschema.component';
 import { FormControl, FormGroup, FormsModule } from '@angular/forms';
@@ -9,7 +9,11 @@ import { ErrorMessage } from './ajvschema/schemadommarker.directive';
   selector: 'app-util',
   templateUrl: './util.component.html',
   styleUrls: ['./util.component.scss'],
-  providers:[{provide:AceEditorComponent,useExisting:AceEditorComponent}]
+  providers:[{provide:AceEditorComponent,useExisting:AceEditorComponent},
+      {provide:APP_INITIALIZER,multi:true, useValue:()=>console.log("UtilComponent bootstapping...")}
+  
+  
+  ]
 })
 export class UtilComponent implements OnInit {
   public errmsg!:string;
@@ -31,7 +35,7 @@ export class UtilComponent implements OnInit {
 
     // this.data_json=JSON.stringify(this.data,null,2);
 
-  
+  @ViewChild('injectwrapper') inejctwrapper!: ComponentRef<any>
 
   // @ViewChild('schema')AjvSchema!:AjvschemaComponent;
 
@@ -51,7 +55,7 @@ export class UtilComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-
+    console.log("fefa",this.inejctwrapper)
     // var aceEditor =ace.edit(this.aceEditor.nativeElement);
     // aceEditor.on('focus',($event)=>{
 

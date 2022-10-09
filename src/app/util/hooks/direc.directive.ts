@@ -1,9 +1,11 @@
-import { Directive, Input } from '@angular/core';
+import { Directive, Inject, Input, Optional, Self } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Directive({
-  selector: '[appDirec]'
+  selector: '[appDirec]',
+  exportAs:'hookdirective'
 })
-export class DirecDirective {
+export class HookDirective {
 
 
   

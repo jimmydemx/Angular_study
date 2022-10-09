@@ -6,7 +6,7 @@ import { BRIDGE } from './value.token';
 @Component({
   selector: 'custom-bridge-a',
   template: `
-    <p #p>
+    <p #p appCCustomBridgeDirective>
      bridge-a
     </p>
     <style>
@@ -19,7 +19,7 @@ import { BRIDGE } from './value.token';
   `,
   providers:[{
     provide: BRIDGE,
-    useExisting: CustomBridgeAComponent
+    useExisting: CustomBridgeAComponent,
   }]
 
 

@@ -1,5 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, EventEmitter, Injector, OnInit, Output } from '@angular/core';
+import { ControlValueAccessor, FormControl, NgControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 
 @Component({
@@ -20,6 +20,7 @@ export class CustomValueAccessComponent implements ControlValueAccessor,OnInit {
   @Output() clickEvent=new EventEmitter()
   constructor() {
 
+
    }
   writeValue(obj: boolean): void {
     this.value = obj;   
@@ -28,7 +29,6 @@ export class CustomValueAccessComponent implements ControlValueAccessor,OnInit {
     
   registerOnChange(fn: any): void {
     this.Onchange = fn;
-    console.log("onChange",this.Onchange);
     
   }
   registerOnTouched(fn: any): void {

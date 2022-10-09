@@ -1,4 +1,4 @@
-import { ApplicationRef, forwardRef, NgModule } from '@angular/core';
+import { ApplicationRef, APP_INITIALIZER, forwardRef, InjectionToken, NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AjvschemaComponent } from './ajvschema/ajvschema.component';
 import { UtilComponent } from './util.component';
@@ -25,11 +25,19 @@ import { ChildHookComponent } from './hooks/childhook.component';
 import { DepInjectDirective } from './dependency-inject/dep-inject.directive';
 import { DepInject2Directive } from './dependency-inject/dep-inject-2.directive';
 import { BootstrapComponent } from './bootstrap/bootstrap.component';
+import { ApiService } from '../shared/services/api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { interval,pipe, take, tap } from 'rxjs';
+import { BrowserModule } from '@angular/platform-browser';
+import { ReduxModule } from './redux/redux.module';
+import { TestDogComponent } from './tests/test-dog/dog.component';
 
 
 const HOOK_COMPONENTS =[];
 
+export const APP_EXTR = new InjectionToken<any>("app_extra")
 
+const ANGULAR_CORE_MODULES= [HttpClientModule]
 
 @NgModule({
   declarations: [
@@ -54,14 +62,20 @@ const HOOK_COMPONENTS =[];
     AWrapperComponent,
     DepInjectDirective,
     DepInject2Directive,
-    BootstrapComponent
+    BootstrapComponent,
+    TestDogComponent,
+
+
 
   ],
   imports: [
+    ANGULAR_CORE_MODULES,
     CommonModule,
     AceEditorModule,
     FormsModule,
-    ReactiveFormsModule,SharedModule
+    ReactiveFormsModule,SharedModule,BrowserModule,
+    ReduxModule
+
   ],
   exports:[
     AjvschemaComponent,
@@ -69,13 +83,62 @@ const HOOK_COMPONENTS =[];
     AceEditorModule,
     FormsModule,
     ReactiveFormsModule
-    
-  ],
-})
-export class UtilModule {
 
-  constructor(appRef: ApplicationRef){
-    console.log(appRef);
-    
+  ],
+  providers: [{
+    provide: APP_INITIALIZER,
+    multi: true,
+    useFactory: (config: ApiService)=>{
+      return ()=>{
+        console.log("entering UtilModule Bootstrapping...")
+        config.fetchEndpoints();
+        // block the bootstrapping then
+        return config.api$.pipe(take(1),tap(val=>console.log("bootstrap",val)))
+      }
+
+    },
+    deps:[ApiService]
+  },
+  {
+    provide: APP_EXTR,
+    useValue: "fawfw",
   }
+
+
+
+],
+bootstrap:[UtilComponent]
+
+})
+export class UtilModule{
+
+  constructor( private api:ApiService){
+
+     // creating UtilModule before execute APP_INITIALIZER, therefore,display order:
+     // creating UtilModule...
+     // entering Bootstrapping...
+
+    console.log("creating UtilModule...");
+
+    this.api.api$.subscribe(val=>{
+      console.log('xxxxx',val)
+    })
+
+
+    // console.log("appRef",this.api);
+
  }
+
+
+  // ngDoBootstrap(appRef: ApplicationRef){
+  //   this.api.getProfilebyID(1).subscribe(val=>{
+  //     if(val?.["id"] !==2){
+  //       console.log(val);
+  //      appRef.bootstrap(BootstrapComponent)
+
+  //     }
+  // })
+
+
+  // }
+}

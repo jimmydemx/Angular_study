@@ -7,11 +7,13 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import { BrowserModule } from '@angular/platform-browser';
 import { DebugPipe } from './pipes/debug.pipe';
+import { ButtonDisplayComponent } from './components/button-display.component';
 
 
 @NgModule({
   declarations: [
-    DebugPipe
+    DebugPipe,
+    ButtonDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { DebugPipe } from './pipes/debug.pipe';
     MatIconModule,
     MatSelectModule,
     MatDividerModule,
-    DebugPipe
+    DebugPipe,
+    ButtonDisplayComponent
 
   ]
 })

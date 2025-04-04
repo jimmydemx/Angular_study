@@ -15,6 +15,8 @@ import { interval } from 'rxjs';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppStoreModule } from './store';
 import { TestModule } from './test/test.module';
+import { OutputInDirectiveDirective } from './directive/output-in-directive/output-in-directive.directive';
+import { OutputInComponentComponent } from './directive/output-in-directive/output-in-component.component';
 
 // import { reducer } from './store/reducers/quote.reducer';
 
@@ -23,12 +25,13 @@ import { TestModule } from './test/test.module';
 @NgModule({
   declarations: [
     AppComponent,
+    OutputInDirectiveDirective,
+    OutputInComponentComponent,
     // ABootstrapComponent,
     // BBootstrapComponent
   ],
   imports: [
     BrowserModule,
-    UtilModule,
     AnimateModule,
     BrowserAnimationsModule,
     SharedModule,
@@ -36,44 +39,44 @@ import { TestModule } from './test/test.module';
     AppStoreModule,
     TestModule
 
-  
-    
+
+
     // EffectsModule.forRoot({user})
 
 ],
 providers:[{provide:APP_INITIALIZER,multi:true, useValue:()=>console.log("Enterting AppModule bootstapping...")}],
 
-  // bootstrap: [AppComponent],
+  bootstrap: [AppComponent],
   entryComponents:[ABootstrapComponent,BBootstrapComponent],
 })
-export class AppModule implements DoBootstrap{
+export class AppModule{
 
-  constructor(private plataformref: PlatformRef, @Inject(APP_EXTR) private a:any){
-    console.log('creating AppModule...',this.a);
-  
-    
-  }
+  // constructor(private plataformref: PlatformRef, @Inject(APP_EXTR) private a:any){
+  //   console.log('creating AppModule...',this.a);
+  //
+  //
+  // }
+  //
+  // ngDoBootstrap(appRef: ApplicationRef): void {
+  //   appRef.bootstrap(AppComponent)
+  //   var ABootstrapComponentRef=appRef.bootstrap(ABootstrapComponent,"div.extra")
+  //
+  //   setTimeout(() => {
+  //     appRef.detachView(ABootstrapComponentRef.hostView)
+  //   }, 2000);
+  //   // appRef.components()
+  //  console.log("feafaw"  ,appRef.viewCount);
 
-  ngDoBootstrap(appRef: ApplicationRef): void {
-    appRef.bootstrap(AppComponent)
-    var ABootstrapComponentRef=appRef.bootstrap(ABootstrapComponent,"div.extra")
-
-    setTimeout(() => {
-      appRef.detachView(ABootstrapComponentRef.hostView)
-    }, 2000);
-    // appRef.components()
-   console.log("feafaw"  ,appRef.viewCount);
-   
   //  setTimeout(() => {
   //   console.log("11fafawfwef");
-    
+
   //   var a =platformBrowserDynamic().bootstrapModule(UtilModule).then((<any>window).appBootstrap && (<any>window).appBootstrap(),
   //   error=>console.log(error))
   //   console.log("fwfew",a)
     // this.plataformref.bootstrapModule(UtilModule)
   //  }, 7000);
-   
-  } 
+
+  // }
 
 
 }

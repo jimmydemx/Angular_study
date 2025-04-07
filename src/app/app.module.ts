@@ -17,6 +17,10 @@ import { AppStoreModule } from './store';
 import { TestModule } from './test/test.module';
 import { OutputInDirectiveDirective } from './directive/output-in-directive/output-in-directive.directive';
 import { OutputInComponentComponent } from './directive/output-in-directive/output-in-component.component';
+import { UseAsDirectiveDirective } from './directive/as/use-as-directive.directive';
+import { UseAsComponentComponent } from './directive/as/use-as-component.component';
+import { ContentChildComponent } from './template-related/content-child/content-child.component';
+import { ContentParentComponent } from './template-related/content-child/content-parent.component';
 
 // import { reducer } from './store/reducers/quote.reducer';
 
@@ -27,6 +31,10 @@ import { OutputInComponentComponent } from './directive/output-in-directive/outp
     AppComponent,
     OutputInDirectiveDirective,
     OutputInComponentComponent,
+    UseAsDirectiveDirective,
+    UseAsComponentComponent,
+    ContentChildComponent,
+    ContentParentComponent,
     // ABootstrapComponent,
     // BBootstrapComponent
   ],

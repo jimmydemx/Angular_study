@@ -21,7 +21,7 @@ import { UseAsDirectiveDirective } from './directive/as/use-as-directive.directi
 import { UseAsComponentComponent } from './directive/as/use-as-component.component';
 import { ContentChildComponent } from './template-related/content-child/content-child.component';
 import { ContentParentComponent } from './template-related/content-child/content-parent.component';
-
+import { FormsModule } from '@angular/forms';
 // import { reducer } from './store/reducers/quote.reducer';
 
 
@@ -45,7 +45,8 @@ import { ContentParentComponent } from './template-related/content-child/content
     SharedModule,
     NgReduxModule,
     AppStoreModule,
-    TestModule
+    TestModule,
+    FormsModule
 
 
 

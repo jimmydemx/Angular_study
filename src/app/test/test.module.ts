@@ -7,6 +7,11 @@ import { TestCounterComponent } from './test-counter/test-counter.component';
 import { CounterComponentComponent } from './component/counter-component.component';
 import {UtilModule} from "../util/util.module";
 import {FormsModule} from "@angular/forms";
+import { ComponentWithSpyComponent } from './component-with-spy/component-with-spy.component';
+import { ComponentWithChildComponent } from './component-with-child/component-with-child.component';
+import {
+  ComponentIsChildComponent
+} from './component-with-child/component-is-child.component';
 
 
 @NgModule({
@@ -14,7 +19,10 @@ import {FormsModule} from "@angular/forms";
     TestComponent,
     TestChild1Component,
     TestCounterComponent,
-    CounterComponentComponent
+    CounterComponentComponent,
+    ComponentWithSpyComponent,
+    ComponentWithChildComponent,
+    ComponentIsChildComponent
   ],
   imports: [
     CommonModule,
@@ -24,6 +32,8 @@ import {FormsModule} from "@angular/forms";
   exports: [
     TestComponent,
     CounterComponentComponent,
+    ComponentWithSpyComponent,
+    ComponentIsChildComponent
   ]
 })
 export class TestModule { }

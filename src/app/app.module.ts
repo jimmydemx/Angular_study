@@ -13,7 +13,7 @@ import { ABootstrapComponent } from './util/bootstrap/a-bootstrap.component';
 import { BBootstrapComponent } from './util/bootstrap/b-bootstrap.component';
 import { interval } from 'rxjs';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppStoreModule } from './store';
+import { AppStoreModule } from './state-control/ngrx/store';
 import { TestModule } from './test/test.module';
 import { OutputInDirectiveDirective } from './directive/output-in-directive/output-in-directive.directive';
 import { OutputInComponentComponent } from './directive/output-in-directive/output-in-component.component';
@@ -22,6 +22,9 @@ import { UseAsComponentComponent } from './directive/as/use-as-component.compone
 import { ContentChildComponent } from './template-related/content-child/content-child.component';
 import { ContentParentComponent } from './template-related/content-child/content-parent.component';
 import { FormsModule } from '@angular/forms';
+import { MyFormControlDirectiveDirective } from './directive/form-control-polyfill/my-form-control-directive.directive';
+import { MyControlValueAccessorDirective } from './directive/form-control-polyfill/my-control-value-accessor.directive';
+import { FormControlComponentComponent } from './directive/form-control-polyfill/form-control-component.component';
 // import { reducer } from './store/reducers/quote.reducer';
 
 
@@ -35,6 +38,9 @@ import { FormsModule } from '@angular/forms';
     UseAsComponentComponent,
     ContentChildComponent,
     ContentParentComponent,
+    MyFormControlDirectiveDirective,
+    MyControlValueAccessorDirective,
+    FormControlComponentComponent,
     // ABootstrapComponent,
     // BBootstrapComponent
   ],

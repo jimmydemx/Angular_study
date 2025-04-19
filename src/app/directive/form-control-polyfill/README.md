@@ -1,0 +1,5 @@
+1, ValueAccessor: 指定什么时候(registerOnchange),以及怎么样写入(writeValue)
+2，MyFormControlDirectiveDirective 里面的逻辑把formControl class 连接到ValueAccessor(传递一个callback function到ValueAccessor)
+3，因为传递的函数比较固定，所以MyFormControlDirectiveDirective 不用改变，但是ValueAccessor需要经常改变，所以需要用户定义
+
+注意使用useExisting 以及Multi 来控制怎么样创建ValueAccessor的实例

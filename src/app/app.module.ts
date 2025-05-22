@@ -14,7 +14,7 @@ import { BBootstrapComponent } from './util/bootstrap/b-bootstrap.component';
 import { interval } from 'rxjs';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppStoreModule } from './state-control/ngrx/store';
-import { TestModule } from './test/test.module';
+import { TestModule } from './unit-test/test.module';
 import { OutputInDirectiveDirective } from './directive/output-in-directive/output-in-directive.directive';
 import { OutputInComponentComponent } from './directive/output-in-directive/output-in-component.component';
 import { UseAsDirectiveDirective } from './directive/as/use-as-directive.directive';
@@ -25,6 +25,10 @@ import { FormsModule } from '@angular/forms';
 import { MyFormControlDirectiveDirective } from './directive/form-control-polyfill/my-form-control-directive.directive';
 import { MyControlValueAccessorDirective } from './directive/form-control-polyfill/my-control-value-accessor.directive';
 import { FormControlComponentComponent } from './directive/form-control-polyfill/form-control-component.component';
+import { DashboardNgrxComponent } from './state-control/ngrx/use/dashboard-ngrx.component';
+import { TabSelectComponent } from './template-related/tab-select/tab-select.component';
+import { TabSelectDirective } from './template-related/tab-select/tab-select.directive';
+import { TabOptionsDirective } from './template-related/tab-select/tab-options.directive';
 // import { reducer } from './store/reducers/quote.reducer';
 
 
@@ -41,6 +45,10 @@ import { FormControlComponentComponent } from './directive/form-control-polyfill
     MyFormControlDirectiveDirective,
     MyControlValueAccessorDirective,
     FormControlComponentComponent,
+    DashboardNgrxComponent,
+    TabSelectComponent,
+    TabSelectDirective,
+    TabOptionsDirective,
     // ABootstrapComponent,
     // BBootstrapComponent
   ],

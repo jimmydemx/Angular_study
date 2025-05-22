@@ -32,6 +32,7 @@ abstract class Creator{
 
 }
 
+// c : { new(): T } 表示C是一个构造函数
 class EuropeCreator extends Creator{
   createProduct<T extends Product>(c: { new(): T }): T {
     return new c();

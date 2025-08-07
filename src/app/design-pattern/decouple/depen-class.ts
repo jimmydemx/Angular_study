@@ -3,6 +3,7 @@
  */
 
 /***
+ *   测试： 对于下面方法如果对methodA 进行单体测试, 必须要进行实例化class B，才能
  *
  */
 class ClassB {

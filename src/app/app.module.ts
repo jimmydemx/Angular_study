@@ -29,6 +29,7 @@ import { DashboardNgrxComponent } from './state-control/ngrx/use/dashboard-ngrx.
 import { TabSelectComponent } from './template-related/tab-select/tab-select.component';
 import { TabSelectDirective } from './template-related/tab-select/tab-select.directive';
 import { TabOptionsDirective } from './template-related/tab-select/tab-options.directive';
+import { InterationOperatorComponent } from './rxjs/interation-operator.component';
 // import { reducer } from './store/reducers/quote.reducer';
 
 
@@ -49,6 +50,7 @@ import { TabOptionsDirective } from './template-related/tab-select/tab-options.d
     TabSelectComponent,
     TabSelectDirective,
     TabOptionsDirective,
+    InterationOperatorComponent,
     // ABootstrapComponent,
     // BBootstrapComponent
   ],

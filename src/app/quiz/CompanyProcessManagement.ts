@@ -67,3 +67,28 @@ class OfficeProcessWrapper implements OfficeProcess{
 export const DYNAMIC_DEPARTMENT = new InjectionToken<Record<any, any>>("Dynamic_Department")
 
 
+type RoleWithComponent= {
+  name: "Employee",
+  Leave: "EmployeeLeaveComponent",
+  Reimburse: "EmployeeReimburseComponent",
+} | {
+  name: "Manager",
+  Leave:"ManagerLeaveComponent"
+  Reimburse:  "ManagerReimburseComponent"
+} | {
+  name: "Finance",
+  Leave:"FinanceLeaveComponent"
+  Reimburse:  "FinanceReimburseComponent"
+} | {
+  name: "Admin",
+  Leave:"AdminLeaveComponent"
+  Reimburse:  "AdminReimburseComponent"
+}
+
+
+type ReviewChains = {
+  name: string,
+  role: "Employee",
+
+
+}

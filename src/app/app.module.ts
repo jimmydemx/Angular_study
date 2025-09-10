@@ -21,7 +21,7 @@ import { UseAsDirectiveDirective } from './directive/as/use-as-directive.directi
 import { UseAsComponentComponent } from './directive/as/use-as-component.component';
 import { ContentChildComponent } from './template-related/content-child/content-child.component';
 import { ContentParentComponent } from './template-related/content-child/content-parent.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MyFormControlDirectiveDirective } from './directive/form-control-polyfill/my-form-control-directive.directive';
 import { MyControlValueAccessorDirective } from './directive/form-control-polyfill/my-control-value-accessor.directive';
 import { FormControlComponentComponent } from './directive/form-control-polyfill/form-control-component.component';
@@ -30,6 +30,8 @@ import { TabSelectComponent } from './template-related/tab-select/tab-select.com
 import { TabSelectDirective } from './template-related/tab-select/tab-select.directive';
 import { TabOptionsDirective } from './template-related/tab-select/tab-options.directive';
 import { InterationOperatorComponent } from './rxjs/interation-operator.component';
+import { OnPushStrategyComponent } from './performance/html-function-render/on-push-strategy.component';
+import { TemplateFormComponent } from './performance/html-function-render/template-form.component';
 // import { reducer } from './store/reducers/quote.reducer';
 
 
@@ -51,6 +53,8 @@ import { InterationOperatorComponent } from './rxjs/interation-operator.componen
     TabSelectDirective,
     TabOptionsDirective,
     InterationOperatorComponent,
+    OnPushStrategyComponent,
+    TemplateFormComponent,
     // ABootstrapComponent,
     // BBootstrapComponent
   ],
@@ -62,13 +66,13 @@ import { InterationOperatorComponent } from './rxjs/interation-operator.componen
     NgReduxModule,
     AppStoreModule,
     TestModule,
-    FormsModule
-
+    FormsModule,
+    ReactiveFormsModule,
 
 
     // EffectsModule.forRoot({user})
 
-],
+  ],
 providers:[{provide:APP_INITIALIZER,multi:true, useValue:()=>console.log("Enterting AppModule bootstapping...")}],
 
   bootstrap: [AppComponent],
